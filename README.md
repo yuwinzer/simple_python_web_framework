@@ -7,11 +7,11 @@ run command
 "--bind" helps to start localhost with port 8010, 
 you can change port, if it already is used
 
-Here are the links, that are implemented:
-[http://127.0.0.1:8010/home]_
-[http://127.0.0.1:8010/about]_
-[http://127.0.0.1:8010/hello/yourname]_
-[http://127.0.0.1:8010/tell/100]_
+Here are the links, that are implemented:<br/>
+[http://127.0.0.1:8010/home]()<br/>
+[http://127.0.0.1:8010/about]()<br/>
+[http://127.0.0.1:8010/hello/yourname]()<br/>
+[http://127.0.0.1:8010/tell/100]()
 
 ## Just testing WSGI files
 run command 
