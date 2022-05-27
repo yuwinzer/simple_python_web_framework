@@ -1,16 +1,20 @@
 # my simple python framework is in development
 
 
-## Starting with gunicorn
+## Starting simple framework
 run command 
 ```gunicorn app:app --bind 127.0.0.1:8010``` 
 
-That helps to start localhost with port 8010, 
-you can change it as you wish:
-> --bind 127.0.0.1:8010
+"--bind" helps to start localhost with port 8010, 
+you can change port, if it already is used
 
+Here are the links, that are implemented:
+[http://127.0.0.1:8010/home]
+[http://127.0.0.1:8010/about]
+[http://127.0.0.1:8010/hello/yourname]
+[http://127.0.0.1:8010/tell/100]
 
-## Alternatives without gunicorn
+## Just testing WSGI files
 run command 
 ```python WSGI.py``` 
 in framework dir and open 
