@@ -23,6 +23,14 @@ def greeting(request, response, age):
     response.text = f"Your age is {age}"
 
 
+@app.route("/book")
+class BooksResource:
+    def get(self, request, response):
+        response.text = "Books page"
+
+    def post(self, request, response):
+        response.text = "Endpoint to create a book"
+
 
 # def app(environ, start_response):
 #     response_body = b'Hello, World!'

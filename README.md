@@ -12,6 +12,7 @@ Here are the links, that are implemented:<br/>
 [http://127.0.0.1:8010/about]()<br/>
 [http://127.0.0.1:8010/hello/yourname]()<br/>
 [http://127.0.0.1:8010/tell/100]()
+[http://127.0.0.1:8010/books]()
 
 ## Just testing WSGI files
 run command 
