@@ -18,6 +18,8 @@ class API:
         response.text = "Not found"
 
     def route(self, path):
+        assert path not in self.routes, "Such route already exists."  # if not raise an error
+
         def wrapper(handler):
             self.routes[path] = handler
             return handler
