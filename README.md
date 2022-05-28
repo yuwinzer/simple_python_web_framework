@@ -14,7 +14,9 @@ Here are the links, that are implemented:<br/>
 [http://127.0.0.1:8010/about]()<br/>
 [http://127.0.0.1:8010/hello/yourname]()<br/>
 [http://127.0.0.1:8010/tell/100]()<br/>
-[http://127.0.0.1:8010/books]()
+[http://127.0.0.1:8010/books]()<br/>
+[http://127.0.0.1:8010/sample]()<br/>
+[http://127.0.0.1:8010/template]()
 
 ## Unit tests
 run command
