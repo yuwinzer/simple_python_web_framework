@@ -16,7 +16,9 @@ Here are the links, that are implemented:<br/>
 [http://127.0.0.1:8010/tell/100]()<br/>
 [http://127.0.0.1:8010/books]()<br/>
 [http://127.0.0.1:8010/sample]()<br/>
-[http://127.0.0.1:8010/template]()
+[http://127.0.0.1:8010/template]()<br/>
+[http://127.0.0.1:8010/json]()<br/>
+[http://127.0.0.1:8010/text]()<br/>
 
 ## Unit tests
 run command

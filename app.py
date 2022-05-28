@@ -45,10 +45,25 @@ def handler(req, resp):
 app.add_route("/sample", handler)
 
 
+# @app.route("/template")
+# def template_handler(req, resp):
+#     resp.body = app.template(
+#         "index.html", context={"name": "Bumbo", "title": "Best Framework"}).encode()
+
+
 @app.route("/template")
 def template_handler(req, resp):
-    resp.body = app.template(
-        "index.html", context={"name": "Bumbo", "title": "Best Framework"}).encode()
+    resp.html = app.template("index.html", context={"name": "Bumbo", "title": "Best Framework"})
+
+
+@app.route("/json")
+def json_handler(req, resp):
+    resp.json = {"name": "data", "type": "JSON"}
+
+
+@app.route("/text")
+def text_handler(req, resp):
+    resp.text = "This is a simple text"
 
 
 def custom_exception_handler(request, response, exception_cls):
@@ -69,6 +84,8 @@ class SimpleCustomMiddleware(Middleware):
 
 
 app.add_middleware(SimpleCustomMiddleware)
+
+
 
 # def app(environ, start_response):
 #     response_body = b'Hello, World!'
