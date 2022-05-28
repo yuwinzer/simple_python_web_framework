@@ -1,3 +1,9 @@
+#pycharm
+.idea
+
+#python
 __pycache__
 *.log
-.idea
+
+# unit test
+.coverage
