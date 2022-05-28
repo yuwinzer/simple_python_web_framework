@@ -32,6 +32,11 @@ class BooksResource:
         response.text = "Endpoint to create a book"
 
 
+@app.route("/exception")
+def exception_throwing_handler(request, response):
+    raise AssertionError("This handler should not be used.")
+
+
 def handler(req, resp):
     resp.text = "sample"
 
@@ -45,6 +50,11 @@ def template_handler(req, resp):
         "index.html", context={"name": "Bumbo", "title": "Best Framework"}).encode()
 
 
+def custom_exception_handler(request, response, exception_cls):
+    response.text = str(exception_cls)
+
+
+app.add_exception_handler(custom_exception_handler)
 
 # def app(environ, start_response):
 #     response_body = b'Hello, World!'
