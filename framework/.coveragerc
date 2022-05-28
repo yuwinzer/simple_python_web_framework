@@ -1,0 +1,2 @@
+[run]
+omit = test_framework.py,conftest.py,app.py, WSGI.py, WSGI_reverse.py

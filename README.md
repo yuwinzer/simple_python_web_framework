@@ -1,5 +1,7 @@
 # my simple python framework is in development
 
+Before run the framework install all packages:
+```pip install -r requirements.txt```
 
 ## Starting simple framework
 run command 
@@ -11,8 +13,16 @@ Here are the links, that are implemented:<br/>
 [http://127.0.0.1:8010/home]()<br/>
 [http://127.0.0.1:8010/about]()<br/>
 [http://127.0.0.1:8010/hello/yourname]()<br/>
-[http://127.0.0.1:8010/tell/100]()
+[http://127.0.0.1:8010/tell/100]()<br/>
 [http://127.0.0.1:8010/books]()
+
+## Unit tests
+run command
+```pytest test_framework.py``` 
+
+for coverage percentage:
+```pytest --cov=. test_framework.py``` 
+
 
 ## Just testing WSGI files
 run command 
