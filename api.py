@@ -8,6 +8,9 @@ from wsgiadapter import WSGIAdapter as RequestsWSGIAdapter
 from jinja2 import Environment, FileSystemLoader
 from whitenoise import WhiteNoise
 
+from middleware import Middleware
+
+
 
 class API:
     def __init__(self, templates_dir="templates", static_dir="static"):
@@ -21,6 +24,8 @@ class API:
 
         self.whitenoise = WhiteNoise(self.wsgi_app, root=static_dir)
 
+        self.middleware = Middleware(self)
+
     def template(self, template_name, context=None):
         if context is None:
             context = {}
@@ -28,7 +33,13 @@ class API:
         return self.templates_env.get_template(template_name).render(**context)
 
     def __call__(self, environ, start_response):
-        return self.whitenoise(environ, start_response)
+        path_info = environ["PATH_INFO"]
+
+        if path_info.startswith("/static"):
+            environ["PATH_INFO"] = path_info[len("/static"):]
+            return self.whitenoise(environ, start_response)
+
+        return self.middleware(environ, start_response)
 
     def wsgi_app(self, environ, start_response):
         request = Request(environ)
@@ -89,6 +100,8 @@ class API:
         session.mount(prefix=base_url, adapter=RequestsWSGIAdapter(self))
         return session
 
+    def add_middleware(self, middleware_cls):
+        self.middleware.add(middleware_cls)
 
     # def __call__(self, environ, start_response):
     #     response_body = b'Hello, World!'
