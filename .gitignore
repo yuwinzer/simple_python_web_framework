@@ -7,3 +7,8 @@ __pycache__
 
 # unit test
 .coverage
+
+#pypi
+/dist/
+/build/
+/winz_simple_webframework.egg-info/
