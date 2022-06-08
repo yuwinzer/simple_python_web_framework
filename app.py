@@ -1,5 +1,5 @@
-from api import API
-from middleware import Middleware
+from winz.api import API
+from winz.middleware import Middleware
 
 app = API()
 
